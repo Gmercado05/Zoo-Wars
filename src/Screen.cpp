@@ -21,7 +21,7 @@ void Screen::printLoseMessage(ostream& out) const{
 void  Screen::printDescription(const string &PlayerName, ostream& out)const{
     out << " Welcome " << PlayerName << "!\n"
     <<"You will now choose your character.\n"
-    << "You will face 7 opponents throughout the duration of your journey.\n"
+    << "You will face 6 opponents throughout the duration of your journey.\n"
     << "Your strength will increase as you win each fight.\n"
     << "You have available 1 block and 1 special power to use in each fight.\n"
     << "Once you win, your health and all abilities will be reset/upgraded.\n"

@@ -7,11 +7,12 @@ class ScreenTest : public ::testing::Test {
 protected:
     Screen screen;
     ostringstream out;
+    streambuf* originalBuffer = nullptr;
     void SetUp() override {
-        cout.rdbuf(out.rdbuf());
+        originalBuffer = cout.rdbuf(out.rdbuf());
     }
     void TearDown() override {
-        cout.rdbuf(nullptr);
+        cout.rdbuf(originalBuffer);
     }
 };
 
@@ -35,7 +36,7 @@ TEST_F(ScreenTest, printDescription) {
     string expect =
         " Welcome Wendy!\n"
         "You will now choose your character.\n"
-        "You will face 7 opponents throughout the duration of your journey.\n"
+        "You will face 6 opponents throughout the duration of your journey.\n"
         "Your strength will increase as you win each fight.\n"
         "You have available 1 block and 1 special power to use in each fight.\n"
         "Once you win, your health and all abilities will be reset/upgraded.\n"

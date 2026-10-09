@@ -119,6 +119,7 @@ bool PlayGame::checkGameOver(Animal* you, Animal* opponenet){
 
 void PlayGame::play(){
   initializeGame();
+  if (you == nullptr) return; // The player quit before creating a character.
   //check for input of x;
   for (int challengerNum = 0; challengerNum < 6; ++challengerNum) {
     while (opponent[challengerNum]->health.getCurrentHealth() > 0 && you->health.getCurrentHealth() > 0) {
